@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { userSignUp } from "../store/reducers/auth";
+
 import "./auth.css";
 
-const Auth = () => {
+const Auth = (props) => {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [flag, setFlag] = useState(0);
   const [inputType, setInputType] = useState("password");
@@ -12,7 +16,10 @@ const Auth = () => {
     email: "",
     number: null,
   });
-
+  const authSignUp = useSelector(
+    (state) => state.auth && state.auth.signupData
+  );
+  console.log(authSignUp);
   useEffect(() => {
     setTimeout(() => setLoading(false), 700);
   }, []);
@@ -30,9 +37,10 @@ const Auth = () => {
 
   const handleSignUpSubmit = async (e) => {
     e.preventDefault();
+    dispatch(userSignUp(data));
   };
   const handleSignUpData = (e) => {
-    // setData({ ...data, [e.target.name]: e.target.value });
+    setData({ ...data, [e.target.name]: e.target.value });
   };
   return (
     <>
@@ -197,4 +205,10 @@ const Auth = () => {
   );
 };
 
+// function matchDispatchToProps(dispatch) {
+//   return {
+//     userSignUp: () => dispatch(userSignUp()),
+//   };
+// }
 export default Auth;
+//export default connect(null, matchDispatchToProps)(Auth);

@@ -3,7 +3,7 @@ const cors = require("cors");
 
 const home = require("../routes/home");
 const users = require("../routes/users");
-//const auth = require("../routes/auth");
+const appconfig = require("../routes/appconfig");
 const error = require("../middleware/error");
 
 module.exports = function (app) {
@@ -12,11 +12,8 @@ module.exports = function (app) {
   app.use(express.urlencoded({ extended: true })); // to loges the reqest into terminal
   app.use(express.static("public")); // to server static content
   // routes setup
-  // app.use("/api/courses", courses);
   app.use("/", home);
-  // autheiticatoin
   app.use("/api/user", users);
-  // app.use("/api/auth", auth);
-  // logger
+  app.use("/api/config", appconfig);
   app.use(error);
 };

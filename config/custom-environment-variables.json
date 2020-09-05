@@ -2,5 +2,6 @@
   "name": "app dev",
   "jwtPrivateKey": "user_jwtPrivateKey",
   "mongoConnection": "mongoConnection",
-  "PORT": "PORT"
+  "PORT": "PORT",
+  "baseUrl": "baseUrl"
 }
