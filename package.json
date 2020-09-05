@@ -5,9 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "cd client && npm run build",
-    "install-client": "cd client && npm install",
-    "client": "cd client && npm start",
+    "build": "cd src && npm run build",
+    "install-client": "cd src && npm install",
+    "client": "cd src && npm start",
     "dev": "concurrently \"nodemon index.js\" \"npm run client\""
   },
   "keywords": [],
