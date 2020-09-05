@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./auth.css";
 
 const Auth = () => {
-  const [loading, setLoading] = useState(1);
+  const [loading, setLoading] = useState(true);
   const [flag, setFlag] = useState(0);
   const [inputType, setInputType] = useState("password");
   const [data, setData] = useState({
@@ -14,10 +14,7 @@ const Auth = () => {
   });
 
   useEffect(() => {
-    setLoading(1);
-    document.addEventListener("load", () => {
-      setLoading(0);
-    });
+    setTimeout(() => setLoading(false), 700);
   }, []);
 
   const clickHandle = (e) => {
@@ -25,7 +22,6 @@ const Auth = () => {
   };
   const handleSignIn = async (e) => {
     e.preventDefault();
-    setLoading(1);
   };
 
   const handleSignInData = (e) => {
@@ -40,7 +36,7 @@ const Auth = () => {
   };
   return (
     <>
-      {loading === 0 ? (
+      {loading ? (
         <div
           style={{
             width: "100%",
