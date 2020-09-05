@@ -15,6 +15,6 @@ module.exports = function () {
       useFindAndModify: true,
     })
     .then(() => winston.info("conneted to mogodb.."))
-    .catch((err) => winston.info("Connected to Mongo"));
+    .catch((err) => winston.info("connection failed.."));
   mongoose.set("useCreateIndex", true);
 };
