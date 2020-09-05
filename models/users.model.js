@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true, minlength: 5, maxlength: 50 },
   email: { type: String, unique: true, required: true },
   password: { type: String, required: true, minlength: 5, maxlength: 1024 },
+  contactNumber: { type: Number, required: true, minlength: 5 },
 });
 
 userSchema.methods.generateAuthToken = function () {
@@ -21,6 +22,7 @@ function validateUser(arg) {
   const schema = Joi.object({
     name: Joi.string().min(5).max(50).required(),
     email: Joi.string().min(5).max(255).required().email(),
+    contactNumber: Joi.number().min(5).required(),
     password: passwordComplexity({
       min: 8,
       max: 25,
