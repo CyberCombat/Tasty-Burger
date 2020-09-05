@@ -1,0 +1,47 @@
+.navbar {
+  border-bottom: 0;
+  text-decoration: none;
+  font-family: "Merienda One", cursive;
+}
+
+.navLogout .bg_grey:hover {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+.navLogout:hover {
+  color: grey;
+}
+.navLogout {
+  /* padding: 0.4rem 0.6rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.4rem;
+}
+
+.navLogout a {
+  display: block;
+  margin: auto;
+}
+
+.navLogout a:hover {
+  display: block;
+  margin: auto;
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+.navLogout button {
+  padding: 0.4rem 0.4rem;
+  color: white;
+  border: none;
+  background: transparent;
+}
+
+.navLogout button:hover {
+  padding: 0.4rem 0.4rem;
+  color: hsla(0, 0%, 100%, 0.7);
+  border: none;
+  background: transparent;
+}
+.hamburger {
+  display: none;
+}

@@ -41,7 +41,7 @@ const Auth = () => {
           style={{
             width: "100%",
             display: "flex",
-            height: "100vh",
+            height: "92vh",
             alignItems: "center",
             justifyContent: "center",
             zIndex: "23444898429",
